@@ -3,430 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cordeiro CAR - Peças para Empilhadeiras</title>
+  <title>Cordeiro CAR — Tapetes Automotivos Premium</title>
+  <meta name="description" content="Tapetes automotivos sob medida para seu veículo. Qualidade premium, encaixe perfeito, entrega para todo o Brasil.">
+  <meta property="og:title" content="Cordeiro CAR — Tapetes Automotivos Premium">
+  <meta property="og:description" content="Tapetes automotivos sob medida. Qualidade premium com encaixe perfeito.">
+  <meta property="og:type" content="website">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:;">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self'; img-src 'self' data:;">
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <i class="fas fa-car"></i>
-        <span>Cordeiro<span class="accent"> CAR</span></span>
-      </a>
+      <a href="index.html" class="nav-logo"><i class="fas fa-car"></i> Cordeiro <span style="color:#a8a29e">CAR</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="produtos.html">Tapetes</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=5511999998888&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20tapetes." class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Pedir Orçamento</a></li>
+      </ul>
       <div class="nav-toggle" id="navToggle">
         <span></span><span></span><span></span>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="active">Início</a></li>
-        <li><a href="#categorias">Categorias</a></li>
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#diferenciais">Diferenciais</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="#produtos" class="btn-nav-cta">Catálogo</a>
-        <button class="btn-cart" id="btnCart" aria-label="Abrir carrinho">
-          <i class="fas fa-shopping-bag"></i>
-          <span class="cart-badge" id="cartBadge">0</span>
-        </button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-overlay"></div>
-    <div class="hero-particles" id="heroParticles"></div>
+  <section class="hero">
     <div class="hero-content">
-      <span class="hero-badge">Especialista em Hyster & Yale</span>
-      <h1 class="hero-title">Peças de Qualidade<br>para sua <span class="accent">Empilhadeira</span></h1>
-      <p class="hero-text">As melhores peças e componentes para empilhadeiras Hyster e Yale. Qualidade original, preço justo e entrega rápida para todo o Brasil.</p>
+      <p class="hero-badge">Sob medida para seu carro</p>
+      <h1 class="hero-title">Tapetes automotivos <strong>com encaixe perfeito</strong></h1>
+      <p class="hero-desc">Fabricados sob medida para cada modelo de veículo. Material premium, resistência superior e design que valoriza o interior do seu carro.</p>
       <div class="hero-actions">
-        <a href="#produtos" class="btn btn-primary">
-          <i class="fas fa-store"></i> Ver Produtos
-        </a>
-        <a href="#diferenciais" class="btn btn-outline">
-          <i class="fas fa-info-circle"></i> Saiba Mais
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item"><span class="stat-num" data-count="50">0</span><span class="stat-label">Peças</span></div>
-        <div class="stat-item"><span class="stat-num" data-count="2">0</span><span class="stat-label">Marcas</span></div>
-        <div class="stat-item"><span class="stat-num" data-count="150">0</span><span class="stat-label">Clientes</span></div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Role para descobrir</span>
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
-
-  <!-- Categorias -->
-  <section class="section" id="categorias">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Categorias</span>
-        <h2 class="section-title">Nossas <span class="accent">Especialidades</span></h2>
-        <p class="section-desc">Tudo que sua empilhadeira precisa em um só lugar</p>
-      </div>
-      <div class="categories-grid">
-        <div class="category-card" data-category="empilhadeira">
-          <div class="category-icon"><i class="fas fa-industry"></i></div>
-          <h3>Empilhadeira</h3>
-          <p>Rolamentos, motor, elétrica, painel e estruturais</p>
-          <span class="category-count">21 produtos</span>
-        </div>
-        <div class="category-card" data-category="iluminacao">
-          <div class="category-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3>Lanternas</h3>
-          <p>Lanternas e faróis automotivos</p>
-          <span class="category-count">15 produtos</span>
-        </div>
+        <a href="produtos.html" class="btn btn-primary">Ver Modelos</a>
+        <a href="https://api.whatsapp.com/send?phone=5511999998888&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20tapetes." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Fale Conosco</a>
       </div>
     </div>
   </section>
 
-  <!-- Produtos -->
-  <section class="section" id="produtos">
+  <section class="section section-cream" id="diferenciais">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Produtos</span>
-        <h2 class="section-title">Catálogo <span class="accent">Completo</span></h2>
-        <p class="section-desc">Peças originais e de reposição para Hyster e Yale</p>
-      </div>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="todos">Todos</button>
-        <button class="filter-btn" data-filter="empilhadeira">Empilhadeira</button>
-        <button class="filter-btn" data-filter="iluminacao">Lanternas</button>
-      </div>
-      <div class="products-grid" id="productsGrid"></div>
-    </div>
-  </section>
-
-  <!-- Diferenciais -->
-  <section class="section section-dark" id="diferenciais">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Diferenciais</span>
-        <h2 class="section-title">Por que escolher a <span class="accent">Cordeiro CAR</span>?</h2>
-        <p class="section-desc">Expertise em peças para empilhadeiras com qualidade e garantia</p>
+        <p class="section-label">Diferenciais</p>
+        <h2 class="section-title">Por que escolher <strong>nossos tapetes</strong></h2>
       </div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-truck"></i></div>
-          <h3>Frete Grátis</h3>
-          <p>Para compras acima de R$ 299 em todo Brasil</p>
+        <div class="feature-card reveal">
+          <div class="icon"><i class="fas fa-ruler-combined"></i></div>
+          <h3>Sob Medida</h3>
+          <p>Produzidos exatamente para o modelo do seu veículo, garantindo encaixe perfeito sem adaptações.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3>Garantia Premium</h3>
-          <p>6 meses de garantia em todos os produtos</p>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Material Premium</h3>
+          <p>Borracha de alta densidade e carpetes especiais que resistem ao desgaste diário e mantêm a aparência por muito mais tempo.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
-          <h3>Parcele em 12x</h3>
-          <p>No cartão de crédito sem juros</p>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="icon"><i class="fas fa-tint"></i></div>
+          <h3>Impermeável</h3>
+          <p>Proteção contra água, lama e sujeira. Fácil de limpar — uma lavagem simples e estão como novos.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-undo-alt"></i></div>
-          <h3>Troca Garantida</h3>
-          <p>Troca gratuita em até 30 dias</p>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="icon"><i class="fas fa-truck"></i></div>
+          <h3>Entrega Rápida</h3>
+          <p>Enviamos para todo o Brasil com embalagem reforçada e prazo de entrega ágil.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-certificate"></i></div>
-          <h3>Peças Originais</h3>
-          <p>Certificadas e com nota fiscal</p>
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="icon"><i class="fas fa-palette"></i></div>
+          <h3>Variedade de Cores</h3>
+          <p>Disponíveis em diversas cores para combinar perfeitamente com o interior do seu veículo.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-headset"></i></div>
-          <h3>Suporte Técnico</h3>
-          <p>Atendimento especializado</p>
+        <div class="feature-card reveal reveal-delay-5">
+          <div class="icon"><i class="fas fa-certificate"></i></div>
+          <h3>Garantia</h3>
+          <p>Todos os produtos acompanham garantia contra defeitos de fabricação. Sua satisfação é nossa prioridade.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Depoimentos -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Depoimentos</span>
-        <h2 class="section-title">O que nossos <span class="accent">clientes</span> dizem</h2>
+        <p class="section-label">Depoimentos</p>
+        <h2 class="section-title">O que nossos <strong>clientes dizem</strong></h2>
       </div>
       <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Comprei o rolamento 30207 para minha Hyster. Peça original, encaixou perfeitamente. Entrega super rápida!"</p>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Comprei o tapete para meu Onix e o encaixe ficou perfeito, como se fosse original. Material de primeira qualidade."</blockquote>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">JS</div>
-            <div><strong>José S.</strong><span>Hyster 2.5t</span></div>
+            <div class="testimonial-avatar">AR</div>
+            <div>
+              <strong>André R.</strong>
+              <span>Chevrolet Onix 2022</span>
+            </div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"A bomba d'água chegou antes do prazo. Qualidade superior e preço melhor que o distribuidor local. Recomendo!"</p>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Tapete resistente e muito bonito. Já recomendei para amigos e todos aprovaram. Entrega superou minhas expectativas."</blockquote>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">ML</div>
-            <div><strong>Marcos L.</strong><span>Yale GDP 3.0</span></div>
+            <div class="testimonial-avatar">LS</div>
+            <div>
+              <strong>Luciana S.</strong>
+              <span>Honda HR-V 2023</span>
+            </div>
           </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Suporte da lanterna veio com acabamento original. Minha empilhadeira voltou a operar no mesmo dia. Nota 10!"</p>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Já é o segundo tapete que compro com eles. O primeiro durou anos e só troquei porque troquei de carro. Qualidade excepcional!"</blockquote>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">CA</div>
-            <div><strong>Carlos A.</strong><span>Hyster Fortis 3.5</span></div>
+            <div class="testimonial-avatar">CM</div>
+            <div>
+              <strong>Carlos M.</strong>
+              <span>Toyota Corolla 2024</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contato / Newsletter -->
-  <section class="section section-dark" id="contato">
+  <section class="section section-cream">
     <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <span class="section-tag">Contato</span>
-          <h2 class="section-title">Fale <span class="accent">Conosco</span></h2>
-          <p>Tire suas dúvidas ou solicite peças não listadas no catálogo</p>
-          <div class="contact-details">
-            <div><i class="fas fa-phone-alt"></i> (11) 99999-8888</div>
-            <div><i class="fas fa-envelope"></i> contato@cordeirocar.com.br</div>
-            <div><i class="fas fa-map-marker-alt"></i> São Paulo, SP</div>
-          </div>
-          <div class="contact-social">
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <h3>Assine nossa Newsletter</h3>
-          <p>Receba ofertas e novidades em peças para empilhadeiras</p>
-          <div class="input-group">
-            <input type="text" id="newsName" placeholder="Seu nome" required>
-          </div>
-          <div class="input-group">
-            <input type="email" id="newsEmail" placeholder="Seu melhor e-mail" required>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Inscrever-se <i class="fas fa-paper-plane"></i></button>
-        </form>
+      <div class="catalog-cta reveal">
+        <h2>Quer saber o valor para <strong>seu carro?</strong></h2>
+        <p>Consulte nossos modelos e preços. Fazemos sob medida para a maioria dos veículos nacionais e importados.</p>
+        <a href="https://api.whatsapp.com/send?phone=5511999998888&text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20tapetes%20para%20meu%20carro." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Solicitar Orçamento</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="nav-logo"><i class="fas fa-car"></i><span>Cordeiro<span class="accent"> CAR</span></span></div>
-          <p>Especialistas em peças para empilhadeiras Hyster e Yale. Qualidade, procedência e entrega rápida.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Navegação</h4>
-          <a href="#home">Início</a>
-          <a href="#produtos">Produtos</a>
-          <a href="#categorias">Categorias</a>
-          <a href="#contato">Contato</a>
-        </div>
-        <div class="footer-links">
-          <h4>Ajuda</h4>
-          <a href="#">Política de Troca</a>
-          <a href="#">Frete e Entrega</a>
-          <a href="#">Garantia</a>
-          <a href="#">FAQ</a>
-        </div>
-        <div class="footer-links">
-          <h4>Pagamentos</h4>
-          <div class="payment-icons">
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-cc-mastercard"></i>
-            <i class="fab fa-cc-amex"></i>
-            <i class="fab fa-pix"></i>
-          </div>
-          <p class="secure-badge"><i class="fas fa-lock"></i> Compra 100% segura</p>
-        </div>
+    <div class="footer-inner">
+      <span class="footer-logo">Cordeiro CAR</span>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Tapetes</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Cordeiro CAR. Todos os direitos reservados.</p>
-      </div>
+      <span class="footer-copy">&copy; 2025 Cordeiro CAR. Todos os direitos reservados.</span>
     </div>
   </footer>
-
-  <!-- Cart Sidebar -->
-  <div class="cart-overlay" id="cartOverlay"></div>
-  <div class="cart-sidebar" id="cartSidebar">
-    <div class="cart-header">
-      <h3><i class="fas fa-shopping-bag"></i> Seu Carrinho</h3>
-      <button class="cart-close" id="cartClose" aria-label="Fechar carrinho">&times;</button>
-    </div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty">
-        <i class="fas fa-shopping-cart"></i>
-        <p>Seu carrinho está vazio</p>
-        <a href="#produtos" class="btn btn-primary" id="continueShopping">Ver Produtos</a>
-      </div>
-    </div>
-    <div class="cart-shipping" id="cartShipping">
-      <div class="shipping-header">
-        <i class="fas fa-truck"></i>
-        <span>Calcular Frete</span>
-      </div>
-      <div class="shipping-input-row">
-        <input type="text" id="shippingCep" placeholder="Digite seu CEP" maxlength="9">
-        <button class="btn-shipping-calc" id="btnCalcShipping">Calcular</button>
-      </div>
-      <div class="shipping-result" id="shippingResult"></div>
-    </div>
-    <div class="cart-footer" id="cartFooter">
-      <div class="cart-total-row">
-        <div class="cart-total-line"><span>Subtotal</span><span id="cartSubtotal">R$ 0,00</span></div>
-        <div class="cart-total-line" id="cartShippingLine" style="display:none;"><span>Frete</span><span id="cartShippingValue"></span></div>
-      </div>
-      <div class="cart-total">
-        <span>Total</span>
-        <span id="cartTotal">R$ 0,00</span>
-      </div>
-      <button class="btn btn-primary btn-full" id="btnCheckout">
-        <i class="fas fa-credit-card"></i> Finalizar Compra
-      </button>
-    </div>
-  </div>
-
-  <!-- Checkout Modal -->
-  <div class="modal-overlay" id="checkoutOverlay">
-    <div class="modal" id="checkoutModal">
-      <div class="modal-header">
-        <h2><i class="fas fa-credit-card"></i> Finalizar Pedido</h2>
-        <button class="modal-close" id="closeCheckout">&times;</button>
-      </div>
-      <form id="checkoutForm" class="checkout-form">
-        <div class="form-row">
-          <div class="input-group">
-            <label>Nome Completo</label>
-            <input type="text" id="checkoutName" placeholder="Seu nome" required>
-          </div>
-          <div class="input-group">
-            <label>E-mail</label>
-            <input type="email" id="checkoutEmail" placeholder="seu@email.com" required>
-          </div>
-        </div>
-        <div class="input-group">
-          <label>Endereço</label>
-          <input type="text" id="checkoutAddress" placeholder="Rua, número, bairro" required>
-        </div>
-        <div class="form-row">
-          <div class="input-group">
-            <label>Cidade</label>
-            <input type="text" id="checkoutCity" placeholder="Sua cidade" required>
-          </div>
-          <div class="input-group">
-            <label>CEP</label>
-            <input type="text" id="checkoutCep" placeholder="00000-000" required>
-          </div>
-        </div>
-        <div class="payment-method">
-          <label>Forma de Pagamento</label>
-          <div class="payment-toggle">
-            <button type="button" class="payment-option active" data-method="card">
-              <i class="fas fa-credit-card"></i> Cartão de Crédito
-            </button>
-            <button type="button" class="payment-option" data-method="pix">
-              <i class="fas fa-qrcode"></i> PIX
-            </button>
-          </div>
-        </div>
-        <div class="payment-section" id="paymentCardSection">
-          <div class="form-row">
-            <div class="input-group">
-              <label>Cartão de Crédito</label>
-              <input type="text" id="checkoutCard" placeholder="0000 0000 0000 0000" maxlength="19">
-            </div>
-            <div class="input-group input-small">
-              <label>Validade</label>
-              <input type="text" id="checkoutExpiry" placeholder="MM/AA" maxlength="5">
-            </div>
-            <div class="input-group input-small">
-              <label>CVV</label>
-              <input type="text" id="checkoutCvv" placeholder="123" maxlength="4">
-            </div>
-          </div>
-        </div>
-        <div class="payment-section" id="paymentPixSection" style="display:none;">
-          <div class="pix-info">
-            <div class="pix-qr-code">
-              <i class="fas fa-qrcode"></i>
-              <span>PIX</span>
-            </div>
-            <p>Pague via PIX escaneando o QR Code ou copiando a chave abaixo.</p>
-            <div class="pix-key-box">
-              <span>Chave PIX:</span>
-              <div class="pix-key-row">
-                <code id="pixKey">cordeirocar@email.com</code>
-                <button type="button" class="btn-copy" onclick="copyPixKey()">
-                  <i class="fas fa-copy"></i>
-                </button>
-              </div>
-            </div>
-            <p class="pix-note">O pedido será processado automaticamente após a confirmação do pagamento.</p>
-          </div>
-        </div>
-        <div class="checkout-summary">
-          <div class="summary-row"><span>Subtotal</span><span id="checkoutSubtotal">R$ 0,00</span></div>
-          <div class="summary-row"><span>Frete</span><span id="checkoutShipping">Grátis</span></div>
-          <div class="summary-row summary-total"><span>Total</span><span id="checkoutTotal">R$ 0,00</span></div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full btn-lg">
-          <i class="fas fa-check-circle"></i> Confirmar Pedido
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Toast -->
-  <div class="toast-container" id="toastContainer"></div>
-
-  <!-- Success Modal -->
-  <div class="modal-overlay" id="successOverlay">
-    <div class="modal modal-success" id="successModal">
-      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-      <h2>Pedido Confirmado!</h2>
-      <p>Seu pedido #<span id="orderNumber">000000</span> foi registrado com sucesso.</p>
-      <p>Você receberá um e-mail com os detalhes da entrega.</p>
-      <button class="btn btn-primary" id="btnContinue">Continuar Comprando</button>
-    </div>
-  </div>
-
-  <!-- PIX Modal -->
-  <div class="modal-overlay" id="pixOverlay">
-    <div class="modal modal-success" id="pixModal">
-      <div class="success-icon" style="color:var(--primary);"><i class="fas fa-qrcode"></i></div>
-      <h2>Pedido Gerado!</h2>
-      <p>Pedido #<span id="pixOrderNumber">000000</span></p>
-      <p>Pague via PIX usando a chave abaixo:</p>
-      <div class="pix-key-box" style="margin:16px 0;text-align:left;">
-        <span>Chave PIX:</span>
-        <div class="pix-key-row">
-          <code id="pixKeyConfirm">cordeirocar@email.com</code>
-          <button type="button" class="btn-copy" onclick="copyPixKey()">
-            <i class="fas fa-copy"></i>
-          </button>
-        </div>
-      </div>
-      <p style="font-size:0.8rem;color:#666;">O pedido será confirmado após a compensação do pagamento.</p>
-      <button class="btn btn-primary" id="btnPixContinue" style="margin-top:16px;">Continuar Comprando</button>
-    </div>
-  </div>
 
   <script src="js/produtos.js"></script>
   <script src="js/carrinho.js"></script>
