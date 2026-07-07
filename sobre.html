@@ -19,16 +19,28 @@
       <a href="index.html" class="nav-logo"><i class="fas fa-car"></i> Cordeiro <span style="color:#a8a29e">CAR</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Início</a></li>
-        <li><a href="produtos.html">Tapetes</a></li>
+        <li><a href="index.html#produtos">Tapetes</a></li>
         <li><a href="sobre.html" class="active">Sobre</a></li>
         <li><a href="contato.html">Contato</a></li>
-        <li><a href="https://api.whatsapp.com/send?phone=5511999998888&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20tapetes." class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Pedir Orçamento</a></li>
       </ul>
-      <div class="nav-toggle" id="navToggle">
-        <span></span><span></span><span></span>
+      <div class="nav-actions">
+        <button class="btn-cart" id="btnCart" aria-label="Abrir carrinho">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <div class="nav-toggle" id="navToggle">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileNavLinks">
+    <a href="index.html">Início</a>
+    <a href="index.html#produtos">Tapetes</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+  </div>
 
   <section class="about-hero">
     <div class="container">
@@ -89,13 +101,163 @@
       <span class="footer-logo">Cordeiro CAR</span>
       <div class="footer-links">
         <a href="index.html">Início</a>
-        <a href="produtos.html">Tapetes</a>
+        <a href="index.html#produtos">Tapetes</a>
         <a href="sobre.html">Sobre</a>
         <a href="contato.html">Contato</a>
       </div>
       <span class="footer-copy">&copy; 2025 Cordeiro CAR. Todos os direitos reservados.</span>
     </div>
   </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-bag"></i> Seu carrinho</h3>
+      <button class="cart-close" id="cartClose" aria-label="Fechar carrinho">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Seu carrinho está vazio</p>
+        <a href="index.html#produtos" class="btn btn-primary" id="continueShopping">Ver Produtos</a>
+      </div>
+    </div>
+    <div class="cart-shipping" id="cartShipping">
+      <div class="shipping-header">
+        <i class="fas fa-truck"></i>
+        <span>Calcular Frete</span>
+      </div>
+      <div class="shipping-input-row">
+        <input type="text" id="shippingCep" placeholder="Digite seu CEP" maxlength="9">
+        <button class="btn-shipping-calc" id="btnCalcShipping">Calcular</button>
+      </div>
+      <div class="shipping-result" id="shippingResult"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total-row">
+        <div class="cart-total-line"><span>Subtotal</span><span id="cartSubtotal">R$ 0,00</span></div>
+        <div class="cart-total-line" id="cartShippingLine" style="display:none;"><span>Frete</span><span id="cartShippingValue"></span></div>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">R$ 0,00</span>
+      </div>
+      <button class="btn btn-primary btn-full" id="btnCheckout"><i class="fas fa-credit-card"></i> Finalizar Compra</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkoutOverlay">
+    <div class="modal" id="checkoutModal">
+      <div class="modal-header">
+        <h2><i class="fas fa-credit-card"></i> Finalizar Pedido</h2>
+        <button class="modal-close" id="closeCheckout">&times;</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-row">
+          <div class="input-group">
+            <label>Nome Completo</label>
+            <input type="text" id="checkoutName" placeholder="Seu nome" required>
+          </div>
+          <div class="input-group">
+            <label>E-mail</label>
+            <input type="email" id="checkoutEmail" placeholder="seu@email.com" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Endereço</label>
+          <input type="text" id="checkoutAddress" placeholder="Rua, número, bairro" required>
+        </div>
+        <div class="form-row">
+          <div class="input-group">
+            <label>Cidade</label>
+            <input type="text" id="checkoutCity" placeholder="Sua cidade" required>
+          </div>
+          <div class="input-group">
+            <label>CEP</label>
+            <input type="text" id="checkoutCep" placeholder="00000-000" required>
+          </div>
+        </div>
+        <div class="payment-method">
+          <label>Forma de Pagamento</label>
+          <div class="payment-toggle">
+            <button type="button" class="payment-option active" data-method="card"><i class="fas fa-credit-card"></i> Cartão de Crédito</button>
+            <button type="button" class="payment-option" data-method="pix"><i class="fas fa-qrcode"></i> PIX</button>
+          </div>
+        </div>
+        <div class="payment-section" id="paymentCardSection">
+          <div class="form-row">
+            <div class="input-group">
+              <label>Cartão de Crédito</label>
+              <input type="text" id="checkoutCard" placeholder="0000 0000 0000 0000" maxlength="19">
+            </div>
+            <div class="input-group input-small">
+              <label>Validade</label>
+              <input type="text" id="checkoutExpiry" placeholder="MM/AA" maxlength="5">
+            </div>
+            <div class="input-group input-small">
+              <label>CVV</label>
+              <input type="text" id="checkoutCvv" placeholder="123" maxlength="4">
+            </div>
+          </div>
+        </div>
+        <div class="payment-section" id="paymentPixSection" style="display:none;">
+          <div class="pix-info">
+            <div class="pix-qr-code"><i class="fas fa-qrcode"></i></div>
+            <p>Pague via PIX escaneando o QR Code ou copiando a chave abaixo.</p>
+            <div class="pix-key-box">
+              <span>Chave PIX:</span>
+              <div class="pix-key-row">
+                <code id="pixKey">cordeirocar@email.com</code>
+                <button type="button" class="btn-copy" onclick="copyPixKey()"><i class="fas fa-copy"></i></button>
+              </div>
+            </div>
+            <p class="pix-note">O pedido será processado automaticamente após a confirmação do pagamento.</p>
+          </div>
+        </div>
+        <div class="checkout-summary">
+          <div class="summary-row"><span>Subtotal</span><span id="checkoutSubtotal">R$ 0,00</span></div>
+          <div class="summary-row"><span>Frete</span><span id="checkoutShipping">Grátis</span></div>
+          <div class="summary-row summary-total"><span>Total</span><span id="checkoutTotal">R$ 0,00</span></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full btn-lg"><i class="fas fa-check-circle"></i> Confirmar Pedido</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="successOverlay">
+    <div class="modal modal-success" id="successModal">
+      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+      <h2>Pedido Confirmado!</h2>
+      <p>Seu pedido #<span id="orderNumber">000000</span> foi registrado com sucesso.</p>
+      <p>Você receberá um e-mail com os detalhes da entrega.</p>
+      <button class="btn btn-primary" id="btnContinue">Continuar Comprando</button>
+    </div>
+  </div>
+
+  <!-- PIX Modal -->
+  <div class="modal-overlay" id="pixOverlay">
+    <div class="modal modal-success" id="pixModal">
+      <div class="success-icon" style="color:#292524;"><i class="fas fa-qrcode"></i></div>
+      <h2>Pedido Gerado!</h2>
+      <p>Pedido #<span id="pixOrderNumber">000000</span></p>
+      <p>Pague via PIX usando a chave abaixo:</p>
+      <div class="pix-key-box" style="margin:16px 0;text-align:left;">
+        <span>Chave PIX:</span>
+        <div class="pix-key-row">
+          <code id="pixKeyConfirm">cordeirocar@email.com</code>
+          <button type="button" class="btn-copy" onclick="copyPixKey()"><i class="fas fa-copy"></i></button>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;color:#a8a29e;">O pedido será confirmado após a compensação do pagamento.</p>
+      <button class="btn btn-primary" id="btnPixContinue" style="margin-top:16px;">Continuar Comprando</button>
+    </div>
+  </div>
 
   <script src="js/produtos.js"></script>
   <script src="js/carrinho.js"></script>
