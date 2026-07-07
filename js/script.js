@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCheckout();
   initFilters();
   initCategoryCards();
+  initMaterialCards();
   initContactForm();
   initScrollReveal();
 });
@@ -49,22 +50,19 @@ function renderProducts(filter) {
   if (!grid) return;
   let filtered = filter === 'todos' ? products : products.filter(p => p.category === filter);
   if (filtered.length === 0) {
-    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:#a8a29e"><p>Nenhum produto encontrado nesta categoria.</p></div>';
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:#86868b"><p>Nenhum produto encontrado nesta categoria.</p></div>';
     return;
   }
   grid.innerHTML = filtered.map(product => {
-    const stars = Array(5).fill('').map((_, i) =>
-      '<i class="fas fa-star' + (i < product.rating ? '' : ' star-empty') + '"></i>'
-    ).join('');
     return '<div class="product-card reveal">' +
-      (product.badge ? '<span class="product-badge">' + sanitize(product.badge) + '</span>' : '') +
-      '<div class="product-image"><i class="fas ' + product.icon + '"></i></div>' +
+      (product.badge ? '<span class="product-badge" data-badge="' + sanitize(product.badge) + '">' + sanitize(product.badge) + '</span>' : '') +
+      '<div class="product-image"><img src="' + sanitize(product.image) + '" alt="' + sanitize(product.name) + '" loading="lazy"></div>' +
       '<div class="product-info">' +
       '<div class="product-category">' + sanitize(getCategoryLabel(product.category)) + '</div>' +
       '<h3 class="product-name">' + sanitize(product.name) + '</h3>' +
-      '<div class="product-rating">' + stars + '<span>(' + product.reviews + ')</span></div>' +
       '<div class="product-price"><span class="current">R$ ' + product.price.toFixed(2) + '</span>' +
       (product.oldPrice ? '<span class="old">R$ ' + product.oldPrice.toFixed(2) + '</span>' : '') + '</div>' +
+      '<div class="product-installment">ou 3x de R$ ' + (product.price / 3).toFixed(2) + ' sem juros</div>' +
       '<button class="btn-add-cart" onclick="addToCart(' + product.id + ')"><i class="fas fa-shopping-bag"></i> Adicionar</button>' +
       '</div></div>';
   }).join('');
@@ -72,7 +70,7 @@ function renderProducts(filter) {
 }
 
 function getCategoryLabel(cat) {
-  const labels = { borracha: 'Borracha Premium', carpete: 'Carpete Black', '3d': 'Tapete 3D', overloque: 'Overloque Premium' };
+  const labels = { ram: 'RAM', fiat: 'Fiat', vw: 'Volkswagen', jeep: 'Jeep' };
   return labels[cat] || cat;
 }
 
@@ -103,6 +101,29 @@ function initCategoryCards() {
       const el = document.getElementById('produtos');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
       renderProducts(cat);
+    });
+  });
+}
+
+function initMaterialCards() {
+  document.querySelectorAll('.material-card').forEach(card => {
+    function activate() {
+      const filter = card.dataset.filter;
+      const grid = document.getElementById('productsGrid');
+      if (!grid) return;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === filter);
+      });
+      renderProducts(filter);
+      const el = document.getElementById('produtos');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+    card.addEventListener('click', activate);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activate();
+      }
     });
   });
 }
@@ -277,7 +298,7 @@ function initCheckout() {
 
 /* ==================== INTEGRAÇÃO BLING ==================== */
 
-const BLING_FUNCTION_URL = 'https://cordeirocar.netlify.app/.netlify/functions/criar-pedido';
+const BLING_FUNCTION_URL = 'https://admirable-wisp-dbe640.netlify.app/.netlify/functions/criar-pedido';
 
 function enviarPedidoParaBling() {
   const itens = cart.map(item => {
@@ -442,7 +463,7 @@ function showToast(message, type) {
 /* ==================== SCROLL REVEAL ==================== */
 
 function initScrollReveal() {
-  const elements = document.querySelectorAll('.reveal');
+  const elements = document.querySelectorAll('.reveal, .reveal-slide');
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {

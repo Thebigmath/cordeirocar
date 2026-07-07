@@ -19,7 +19,7 @@
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo"><i class="fas fa-car"></i> Cordeiro <span style="color:#a8a29e">CAR</span></a>
+      <a href="index.html" class="nav-logo"><img src="assets/logo-cordeirocar.png" alt="Cordeiro CAR" class="logo-img"></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Início</a></li>
         <li><a href="#categorias">Categorias</a></li>
@@ -47,49 +47,72 @@
     <a href="contato.html">Contato</a>
   </div>
 
-  <section class="hero" id="home">
+  <section class="hero" id="home" style="background-image:url('assets/produtos/hero-tapete-interior.png');">
     <div class="hero-content">
       <p class="hero-badge">Sob medida para seu carro</p>
       <h1 class="hero-title">Tapetes automotivos <strong>com encaixe perfeito</strong></h1>
       <p class="hero-desc">Fabricados sob medida para cada modelo de veículo. Material premium, resistência superior e entrega rápida para todo o Brasil.</p>
       <div class="hero-actions">
         <a href="catalogo/index.html" class="btn btn-primary btn-catalog"><i class="fas fa-th-large"></i> Ver Catálogo</a>
-        <a href="https://api.whatsapp.com/send?phone=5511999998888&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20tapetes." class="btn btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> Tirar Dúvidas</a>
       </div>
     </div>
   </section>
 
-  <section class="section section-cream" id="categorias">
+  <section class="section categories-section" id="categorias">
     <div class="container">
       <div class="section-header">
         <p class="section-label">Categorias</p>
         <h2 class="section-title">Nossos <strong>tapetes</strong></h2>
-        <p class="section-desc">Escolha o tipo ideal para seu veículo</p>
+        <p class="section-desc">Escolha a marca do seu veículo</p>
       </div>
       <div class="categories-grid">
-        <div class="category-card reveal" data-category="borracha">
-          <div class="category-icon"><i class="fas fa-car"></i></div>
-          <h3>Borracha Premium</h3>
-          <p>Resistentes, fáceis de limpar</p>
-          <span class="category-count">6 produtos</span>
+        <div class="category-card reveal-slide" data-category="ram">
+          <img src="assets/carros/ram-rampage.png" alt="RAM Rampage" loading="lazy">
+          <div class="category-card-gradient"></div>
+          <div class="category-card-wordmark">RAM</div>
+          <div class="category-card-bottom">
+            <div class="category-card-bottom-left">
+              <span class="category-card-tag">1 produto</span>
+              <p>Rampage</p>
+            </div>
+            <button class="category-card-arrow" aria-label="Explorar RAM"><i class="fas fa-arrow-right"></i></button>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-1" data-category="carpete">
-          <div class="category-icon"><i class="fas fa-couch"></i></div>
-          <h3>Carpete Black</h3>
-          <p>Toque macio, visual sofisticado</p>
-          <span class="category-count">4 produtos</span>
+        <div class="category-card reveal-slide reveal-delay-1" data-category="fiat">
+          <img src="assets/carros/fiat-toro.png" alt="Fiat Toro" loading="lazy">
+          <div class="category-card-gradient"></div>
+          <div class="category-card-wordmark">Fiat</div>
+          <div class="category-card-bottom">
+            <div class="category-card-bottom-left">
+              <span class="category-card-tag">2 produtos</span>
+              <p>Toro e Fastback</p>
+            </div>
+            <button class="category-card-arrow" aria-label="Explorar Fiat"><i class="fas fa-arrow-right"></i></button>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-2" data-category="3d">
-          <div class="category-icon"><i class="fas fa-cube"></i></div>
-          <h3>Tapete 3D</h3>
-          <p>Bordas elevadas, cobertura total</p>
-          <span class="category-count">2 produtos</span>
+        <div class="category-card reveal-slide reveal-delay-2" data-category="vw">
+          <img src="assets/carros/vw-polo.png" alt="Volkswagen Polo" loading="lazy">
+          <div class="category-card-gradient"></div>
+          <div class="category-card-wordmark">Volkswagen</div>
+          <div class="category-card-bottom">
+            <div class="category-card-bottom-left">
+              <span class="category-card-tag">2 produtos</span>
+              <p>Polo e Virtus</p>
+            </div>
+            <button class="category-card-arrow" aria-label="Explorar Volkswagen"><i class="fas fa-arrow-right"></i></button>
+          </div>
         </div>
-        <div class="category-card reveal reveal-delay-3" data-category="overloque">
-          <div class="category-icon"><i class="fas fa-tshirt"></i></div>
-          <h3>Overloque Premium</h3>
-          <p>Acabamento overloque, durável</p>
-          <span class="category-count">2 produtos</span>
+        <div class="category-card reveal-slide reveal-delay-3" data-category="jeep">
+          <img src="assets/carros/jeep-renegade.png" alt="Jeep Renegade" loading="lazy">
+          <div class="category-card-gradient"></div>
+          <div class="category-card-wordmark">Jeep</div>
+          <div class="category-card-bottom">
+            <div class="category-card-bottom-left">
+              <span class="category-card-tag">2 produtos</span>
+              <p>Renegade e Compass</p>
+            </div>
+            <button class="category-card-arrow" aria-label="Explorar Jeep"><i class="fas fa-arrow-right"></i></button>
+          </div>
         </div>
       </div>
     </div>
@@ -100,11 +123,11 @@
       <div class="section-header">
         <p class="section-label">Produtos</p>
         <h2 class="section-title">Conheça nosso <strong>catálogo completo</strong></h2>
-        <p class="section-desc">Dezenas de modelos sob medida, filtráveis por tipo de material, prontos para o seu veículo.</p>
+        <p class="section-desc">Dezenas de modelos, prontos para o seu veículo.</p>
       </div>
       <div class="catalog-cta-panel reveal">
         <div class="catalog-cta-text">
-          <h3>Borracha, carpete, 3D e overloque</h3>
+          <h3>Bandeja 3D sob medida</h3>
           <p>Explore todos os modelos, compare preços e adicione ao carrinho direto no catálogo.</p>
         </div>
         <a href="catalogo/index.html" class="btn btn-primary btn-lg btn-catalog"><i class="fas fa-th-large"></i> Acessar Catálogo</a>
@@ -138,41 +161,6 @@
           <div class="icon"><i class="fas fa-truck"></i></div>
           <h3>Entrega Rápida</h3>
           <p>Enviamos para todo o Brasil</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Depoimentos</p>
-        <h2 class="section-title">O que nossos <strong>clientes dizem</strong></h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote>"Comprei o tapete para meu Onix e o encaixe ficou perfeito, como se fosse original. Material de primeira qualidade."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">AR</div>
-            <div><strong>André R.</strong><span>Chevrolet Onix 2022</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-1">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote>"Tapete resistente e muito bonito. Já recomendei para amigos e todos aprovaram. Entrega superou as expectativas."</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">LS</div>
-            <div><strong>Luciana S.</strong><span>Honda HR-V 2023</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-2">
-          <div class="testimonial-stars">★★★★★</div>
-          <blockquote>"Já é o segundo tapete que compro com eles. O primeiro durou anos e só troquei porque troquei de carro. Qualidade excepcional!"</blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">CM</div>
-            <div><strong>Carlos M.</strong><span>Toyota Corolla 2024</span></div>
-          </div>
         </div>
       </div>
     </div>
@@ -325,7 +313,7 @@
   <!-- PIX Modal -->
   <div class="modal-overlay" id="pixOverlay">
     <div class="modal modal-success" id="pixModal">
-      <div class="success-icon" style="color:#292524;"><i class="fas fa-qrcode"></i></div>
+      <div class="success-icon" style="color:#1d1d1f;"><i class="fas fa-qrcode"></i></div>
       <h2>Pedido Gerado!</h2>
       <p>Pedido #<span id="pixOrderNumber">000000</span></p>
       <p>Pague via PIX usando a chave abaixo:</p>
@@ -336,7 +324,7 @@
           <button type="button" class="btn-copy" onclick="copyPixKey()"><i class="fas fa-copy"></i></button>
         </div>
       </div>
-      <p style="font-size:0.8rem;color:#a8a29e;">O pedido será confirmado após a compensação do pagamento.</p>
+      <p style="font-size:0.8rem;color:#86868b;">O pedido será confirmado após a compensação do pagamento.</p>
       <button class="btn btn-primary" id="btnPixContinue" style="margin-top:16px;">Continuar Comprando</button>
     </div>
   </div>
