@@ -269,9 +269,22 @@ input, textarea { font-family: inherit; outline: none; }
 .section-cream { background: #f5f5f7; }
 .section-dark { background: #1d1d1f; }
 .section-dark .section-title { color: #ffffff; }
-.section-dark .section-desc { color: #86868b; }
-.section-dark .section-label { color: #86868b; }
-.section-dark .section-label::before { background: #86868b; }
+.section-dark .section-desc { color: #a1a1a6; }
+.section-dark .section-label { color: #a1a1a6; }
+.section-dark .section-label::before { background: #a1a1a6; }
+.section-dark .section-label::after { background: #a1a1a6; }
+
+.features-section { padding: 100px 0; }
+
+.features-section .feature-card {
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+  transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.features-section .feature-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  transform: translateY(-6px);
+}
 
 .section-header {
   text-align: center;
