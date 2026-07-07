@@ -957,6 +957,10 @@ input, textarea { font-family: inherit; outline: none; }
 .filter-btn:hover { border-color: #86868b; color: #1d1d1f; }
 .filter-btn.active { background: #1d1d1f; color: #ffffff; border-color: #1d1d1f; }
 
+.section-dark .filter-btn { color: #a1a1a6; border-color: #2a2a2e; }
+.section-dark .filter-btn:hover { border-color: #a1a1a6; color: #ffffff; }
+.section-dark .filter-btn.active { background: #ffffff; color: #1d1d1f; border-color: #ffffff; }
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
