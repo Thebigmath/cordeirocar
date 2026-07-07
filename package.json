@@ -1,0 +1,9 @@
+{
+  "name": "cordeirocar-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site estático Cordeiro CAR + Netlify Functions para integração com o Bling",
+  "dependencies": {
+    "@netlify/blobs": "^7.2.0"
+  }
+}

@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   loadCart();
-  renderProducts('todos');
+  const filtroParam = new URLSearchParams(window.location.search).get('filtro');
+  renderProducts(filtroParam || 'todos');
+  if (filtroParam) {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.filter === filtroParam);
+    });
+  }
   initNavbar();
   initCartSidebar();
   initShippingCalc();
@@ -86,6 +92,11 @@ function initCategoryCards() {
   document.querySelectorAll('.category-card').forEach(card => {
     card.addEventListener('click', () => {
       const cat = card.dataset.category;
+      const grid = document.getElementById('productsGrid');
+      if (!grid) {
+        window.location.href = 'catalogo/index.html?filtro=' + encodeURIComponent(cat);
+        return;
+      }
       document.querySelectorAll('.filter-btn').forEach(b => {
         b.classList.toggle('active', b.dataset.filter === cat);
       });
@@ -198,6 +209,7 @@ function initCheckout() {
       const orderNum = String(Math.floor(100000 + Math.random() * 900000));
       const orderEl = document.getElementById('orderNumber');
       if (orderEl) orderEl.textContent = orderNum;
+      enviarPedidoParaBling();
       if (selectedPayment === 'pix') {
         closeCheckoutModal();
         openPixModal(orderNum);
@@ -261,6 +273,36 @@ function initCheckout() {
       this.value = this.value.replace(/\D/g, '').replace(/(\d{5})(?=\d)/, '$1-');
     });
   }
+}
+
+/* ==================== INTEGRAÇÃO BLING ==================== */
+
+const BLING_FUNCTION_URL = 'https://cordeirocar.netlify.app/.netlify/functions/criar-pedido';
+
+function enviarPedidoParaBling() {
+  const itens = cart.map(item => {
+    const product = products.find(p => p.id === item.id);
+    return product ? { nome: product.name, quantidade: item.qty, valor: product.price } : null;
+  }).filter(Boolean);
+
+  const payload = {
+    nome: document.getElementById('checkoutName').value,
+    email: document.getElementById('checkoutEmail').value,
+    endereco: document.getElementById('checkoutAddress').value,
+    cidade: document.getElementById('checkoutCity').value,
+    cep: document.getElementById('checkoutCep').value,
+    itens,
+    total: getCartTotal(),
+    frete: getShippingValue()
+  };
+
+  fetch(BLING_FUNCTION_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(err => {
+    console.warn('Não foi possível enviar o pedido ao Bling:', err);
+  });
 }
 
 function openCheckoutModal() {
