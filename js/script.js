@@ -56,10 +56,10 @@ function renderProducts(filter) {
   grid.innerHTML = filtered.map(product => {
     return '<div class="product-card reveal">' +
       (product.badge ? '<span class="product-badge" data-badge="' + sanitize(product.badge) + '">' + sanitize(product.badge) + '</span>' : '') +
-      '<div class="product-image"><img src="' + sanitize(product.image) + '" alt="' + sanitize(product.name) + '" loading="lazy"></div>' +
+      '<a href="produto.html?id=' + product.id + '" class="product-image"><img src="' + sanitize(product.image) + '" alt="' + sanitize(product.name) + '" loading="lazy"></a>' +
       '<div class="product-info">' +
       '<div class="product-category">' + sanitize(getCategoryLabel(product.category)) + '</div>' +
-      '<h3 class="product-name">' + sanitize(product.name) + '</h3>' +
+      '<h3 class="product-name"><a href="produto.html?id=' + product.id + '">' + sanitize(product.name) + '</a></h3>' +
       '<div class="product-price"><span class="current">R$ ' + product.price.toFixed(2) + '</span>' +
       (product.oldPrice ? '<span class="old">R$ ' + product.oldPrice.toFixed(2) + '</span>' : '') + '</div>' +
       '<div class="product-installment">ou 3x de R$ ' + (product.price / 3).toFixed(2) + ' sem juros</div>' +

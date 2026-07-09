@@ -120,7 +120,7 @@ function renderCartItems() {
     const product = products.find(p => p.id === item.id);
     if (!product) return;
     const subtotal = product.price * item.qty;
-    html += '<div class="cart-item"><div class="cart-item-image"><i class="fas ' + product.icon + '"></i></div><div class="cart-item-info"><h4>' + sanitize(product.name) + '</h4><div class="cart-item-price">R$ ' + subtotal.toFixed(2) + '</div><div class="cart-item-qty"><button onclick="updateQty(' + item.id + ',-1)"><i class="fas fa-minus"></i></button><span>' + item.qty + '</span><button onclick="updateQty(' + item.id + ',1)"><i class="fas fa-plus"></i></button></div></div><button class="cart-item-remove" onclick="removeFromCart(' + item.id + ')"><i class="fas fa-trash-alt"></i></button></div>';
+    html += '<div class="cart-item"><div class="cart-item-image"><img src="' + sanitize(product.image) + '" alt="' + sanitize(product.name) + '"></div><div class="cart-item-info"><h4>' + sanitize(product.name) + '</h4><div class="cart-item-price">R$ ' + subtotal.toFixed(2) + '</div><div class="cart-item-qty"><button onclick="updateQty(' + item.id + ',-1)"><i class="fas fa-minus"></i></button><span>' + item.qty + '</span><button onclick="updateQty(' + item.id + ',1)"><i class="fas fa-plus"></i></button></div></div><button class="cart-item-remove" onclick="removeFromCart(' + item.id + ')"><i class="fas fa-trash-alt"></i></button></div>';
   });
   container.innerHTML = html;
   const subtotal = getCartSubtotal();
