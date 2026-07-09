@@ -132,7 +132,7 @@ input, textarea { font-family: inherit; outline: none; }
 /* ==================== HERO ==================== */
 
 .hero {
-  min-height: calc(92vh + 96px);
+  min-height: max(calc(92vh + 96px), 780px);
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
