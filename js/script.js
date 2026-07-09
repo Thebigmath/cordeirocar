@@ -56,7 +56,7 @@ function renderProducts(filter) {
   grid.innerHTML = filtered.map(product => {
     return '<div class="product-card reveal">' +
       (product.badge ? '<span class="product-badge" data-badge="' + sanitize(product.badge) + '">' + sanitize(product.badge) + '</span>' : '') +
-      '<a href="produto.html?id=' + product.id + '" class="product-image"><img src="' + sanitize(product.image) + '" alt="' + sanitize(product.name) + '" loading="lazy"></a>' +
+      '<a href="produto.html?id=' + product.id + '" class="product-image"><img src="' + sanitize(assetPath(product.image)) + '" alt="' + sanitize(product.name) + '" loading="lazy"></a>' +
       '<div class="product-info">' +
       '<div class="product-category">' + sanitize(getCategoryLabel(product.category)) + '</div>' +
       '<h3 class="product-name"><a href="produto.html?id=' + product.id + '">' + sanitize(product.name) + '</a></h3>' +

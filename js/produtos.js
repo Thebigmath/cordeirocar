@@ -5,7 +5,7 @@ const products = [
     category: 'ram',
     price: 329.90,
     oldPrice: null,
-    image: '../assets/produtos/1-ram-rampage.webp',
+    image: 'assets/produtos/1-ram-rampage.webp',
     badge: 'Novidade',
     description: 'Feito sob medida para a RAM Rampage, este kit bandeja 3D cobre 100% do assoalho — dianteira e traseira — com bordas elevadas que travam a sujeira, a lama e a água dentro do próprio tapete. Nada de manchas no carpete original.',
     destaques: [
@@ -22,7 +22,7 @@ const products = [
     category: 'fiat',
     price: 295.50,
     oldPrice: null,
-    image: '../assets/produtos/2-fiat-fastback.webp',
+    image: 'assets/produtos/2-fiat-fastback.webp',
     badge: null,
     description: 'Desenhado para o assoalho exato do Fiat Fastback, este jogo bandeja substitui o tapete de fábrica com uma proteção real contra o dia a dia: chuva, terra, areia de praia ou lama de trilha ficam retidas na bandeja, longe do carpete.',
     destaques: [
@@ -39,7 +39,7 @@ const products = [
     category: 'fiat',
     price: 349.90,
     oldPrice: null,
-    image: '../assets/produtos/3-fiat-toro.webp',
+    image: 'assets/produtos/3-fiat-toro.webp',
     badge: 'Mais Vendido',
     description: 'O queridinho de quem tem Toro. Kit bandeja premium que aguenta a rotina de quem usa o carro pra trabalhar e pra aventura — cobre até os cantos mais escondidos do assoalho, com uma borda alta que segura líquido de verdade, não só respinco.',
     destaques: [
@@ -56,7 +56,7 @@ const products = [
     category: 'vw',
     price: 299.90,
     oldPrice: null,
-    image: '../assets/produtos/4-vw-polo.webp',
+    image: 'assets/produtos/4-vw-polo.webp',
     badge: null,
     description: 'Peça traseira inteiriça (sem emendas) para o VW Polo — menos frestas, menos sujeira acumulada, mais fácil de limpar. Um encaixe que parece ter saído de fábrica.',
     destaques: [
@@ -73,7 +73,7 @@ const products = [
     category: 'jeep',
     price: 369.90,
     oldPrice: null,
-    image: '../assets/produtos/5-jeep-renegade.webp',
+    image: 'assets/produtos/5-jeep-renegade.webp',
     badge: null,
     description: 'Pensado para quem não abre mão de sair do asfalto no Renegade. Bandeja 3D que aguenta lama, poeira e água sem deixar vestígio no carpete — e ainda protege o revestimento original em caso de revenda.',
     destaques: [
@@ -90,7 +90,7 @@ const products = [
     category: 'vw',
     price: 299.99,
     oldPrice: null,
-    image: '../assets/produtos/6-vw-virtus.webp',
+    image: 'assets/produtos/6-vw-virtus.webp',
     badge: null,
     description: 'Borda alta pensada pra quem tem filho, pet ou simplesmente não quer se preocupar com respingo de água ou terra no Virtus. Cobre o assoalho de ponta a ponta com precisão milimétrica.',
     destaques: [
@@ -107,7 +107,7 @@ const products = [
     category: 'jeep',
     price: 349.90,
     oldPrice: null,
-    image: '../assets/produtos/7-jeep-compass.webp',
+    image: 'assets/produtos/7-jeep-compass.webp',
     badge: null,
     description: 'O Compass merece uma proteção à altura. Bandeja premium com cobertura total do assoalho, pensada para o uso urbano pesado e as escapadas de fim de semana — sem medo de estragar o interior.',
     destaques: [

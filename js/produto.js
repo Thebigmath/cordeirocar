@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const img = document.getElementById('detailImage');
-  img.src = product.image;
+  img.src = assetPath(product.image);
   img.alt = product.name;
 
   document.getElementById('detailCategory').textContent = getCategoryLabel(product.category);
