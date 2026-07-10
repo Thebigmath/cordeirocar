@@ -1313,6 +1313,119 @@ input, textarea { font-family: inherit; outline: none; }
   transform: translateX(4px);
 }
 
+/* ==================== ARTICLE PAGE ==================== */
+
+.article-header {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.article-header .blog-card-tag {
+  margin-bottom: 20px;
+}
+
+.article-header h1 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.article-meta {
+  font-size: .82rem;
+  color: #86868b;
+}
+
+.article-cover {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 8;
+}
+
+.article-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-content p {
+  font-size: 1rem;
+  color: #3a3a3c;
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+
+.article-content h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin: 48px 0 18px;
+}
+
+.article-quote {
+  border-left: 3px solid #1d1d1f;
+  background: #f5f5f7;
+  padding: 24px 28px;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: #1d1d1f;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin: 32px 0;
+}
+
+.article-table-wrap {
+  overflow-x: auto;
+  margin: 8px 0 32px;
+  border: 1px solid #e8e8ed;
+  border-radius: 12px;
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .85rem;
+  min-width: 620px;
+}
+
+.article-table th {
+  text-align: left;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e8e8ed;
+}
+
+.article-table td {
+  padding: 14px 16px;
+  color: #3a3a3c;
+  line-height: 1.5;
+  border-bottom: 1px solid #e8e8ed;
+  vertical-align: top;
+}
+
+.article-table tr:last-child td { border-bottom: none; }
+
+.article-table td:last-child {
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+.article-cta {
+  max-width: 900px;
+  margin: 64px auto 0;
+}
+
 /* ==================== PRODUCT DETAIL PAGE ==================== */
 
 .product-breadcrumb {
